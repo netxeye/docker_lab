@@ -1,7 +1,5 @@
-from ubuntu:latest
+from alpine
 
-run apt-get update \
-    && apt-get install -y curl \
-    && rm -rf /va/lib/apt/lists/*
+run apk --update add --no-cache curl 
 
 entrypoint ["curl", "-s", "-L", "https://ip.cn"]																	
